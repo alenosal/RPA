@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="760.8,923.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1006.4,788" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -46,7 +46,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Display or modify an asset.&#xD;&#xA;&#xD;&#xA;In order to run this process, first create a text asset in Orchestrator with name &quot;TestAsset&quot;. You can assign it an initialvalue.&#xD;&#xA;&#xD;&#xA;In case the following error: &quot;Operation returned an invalid status code 'Forbidden'&quot; occurs while modifying the asset value, you need to perform the following steps:&#xD;&#xA;-Go to Users page and select Roles&#xD;&#xA;-Click on &quot;More actions&quot; for Robot role -&gt; Update Robot role&#xD;&#xA;-For Assets row check the square on Edit column &amp; click Update." DisplayName="Main" sap:VirtualizedContainerService.HintSize="720.8,843.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="816.8,623.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SelectedAction" />
       <Variable x:TypeArguments="x:String" Name="AssetValue" />
@@ -54,17 +54,16 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog DisplayName="Input Dialog Action" sap:VirtualizedContainerService.HintSize="698.4,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Choose what you want to do:" Options="[{&quot;Modify asset&quot;,&quot;Display asset value&quot;}]" Title="Select action">
+    <ui:InputDialog DisplayName="Input Dialog Action" sap:VirtualizedContainerService.HintSize="775.2,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Choose what you want to do:" Options="[{&quot;Modify asset&quot;,&quot;Display asset value&quot;}]" Title="Select action">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[SelectedAction]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <If Condition="[SelectedAction.Equals(&quot;Modify asset&quot;)]" DisplayName="If selected action is Modify" sap:VirtualizedContainerService.HintSize="698.4,429.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[SelectedAction.Equals(&quot;Modify asset&quot;)]" DisplayName="If selected action is Modify" sap:VirtualizedContainerService.HintSize="775.2,397.6" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Modify value" sap:VirtualizedContainerService.HintSize="336.8,280" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Modify value" sap:VirtualizedContainerService.HintSize="375.2,248" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="AssetNewValue" />
           </Sequence.Variables>
@@ -73,7 +72,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog new value" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please input the new value of the asset:" Title="Input value">
+          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog new value" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please input the new value of the asset:" Title="Input value">
             <ui:InputDialog.Result>
               <OutArgument x:TypeArguments="x:String">[AssetNewValue]</OutArgument>
             </ui:InputDialog.Result>
@@ -82,7 +81,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Display value" sap:VirtualizedContainerService.HintSize="336.8,247.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Display value" sap:VirtualizedContainerService.HintSize="356,215.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
